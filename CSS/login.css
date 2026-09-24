@@ -1,0 +1,367 @@
+/* =========================================================
+   SMART IT — LOGIN PAGE
+   Unified visual design
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* ---------------------------------------------------------
+   PAGE
+   --------------------------------------------------------- */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(4, 15, 35, 0.94),
+            rgba(7, 25, 52, 0.88)
+        ),
+        url("../Images/login-bg.jpg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #edf5ff;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   BACKGROUND LIGHT EFFECTS
+   --------------------------------------------------------- */
+
+body::before,
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(100px);
+
+    opacity: 0.16;
+}
+
+body::before {
+    top: -130px;
+    left: -100px;
+
+    background: #269bd8;
+}
+
+body::after {
+    right: -130px;
+    bottom: -140px;
+
+    background: #4169e1;
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN CARD
+   --------------------------------------------------------- */
+
+.login-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(470px, 100%);
+
+    padding: 42px 40px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 34, 66, 0.96),
+            rgba(7, 20, 42, 0.96)
+        );
+
+    border: 1px solid rgba(112, 215, 255, 0.12);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* ---------------------------------------------------------
+   LOGO
+   --------------------------------------------------------- */
+
+.login-container .logo {
+    width: 125px;
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 22px rgba(0, 0, 0, 0.25)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+.login-title {
+    margin-bottom: 30px;
+
+    color: #f4f8ff;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Small accent under title */
+
+.login-title::after {
+    content: "";
+
+    display: block;
+
+    width: 46px;
+    height: 3px;
+
+    margin: 13px auto 0;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #269bd8,
+            #70d7ff
+        );
+}
+
+
+/* ---------------------------------------------------------
+   INPUT GROUP
+   --------------------------------------------------------- */
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   INPUTS
+   --------------------------------------------------------- */
+
+.input-group input {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: rgba(4, 15, 32, 0.72);
+
+    color: #edf5ff;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.input-group input::placeholder {
+    color: rgba(210, 222, 240, 0.45);
+}
+
+
+/* Focus */
+
+.input-group input:focus {
+    border-color: rgba(112, 215, 255, 0.65);
+
+    background: rgba(5, 20, 42, 0.95);
+
+    box-shadow:
+        0 0 0 3px rgba(112, 215, 255, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN BUTTON
+   --------------------------------------------------------- */
+
+.login-btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #269bd8,
+            #4fc3f7
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(38, 155, 216, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* Hover */
+
+.login-btn:hover {
+    transform: translateY(-1px);
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        0 14px 30px rgba(38, 155, 216, 0.28);
+}
+
+
+/* Active */
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   SUBTITLE
+   --------------------------------------------------------- */
+
+.subtitle {
+    margin-top: 22px;
+
+    color: rgba(210, 224, 242, 0.55);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+
+        padding: 34px 28px;
+
+        border-radius: 19px;
+    }
+
+    .login-container .logo {
+        width: 105px;
+
+        margin-bottom: 17px;
+    }
+
+    .login-title {
+        font-size: 28px;
+
+        margin-bottom: 25px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-title {
+        font-size: 25px;
+    }
+
+    .input-group input,
+    .login-btn {
+        min-height: 48px;
+    }
+
+}

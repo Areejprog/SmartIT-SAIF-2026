@@ -1,0 +1,339 @@
+/* =========================================================
+   SMART IT — REPORTS DASHBOARD
+   Page-specific styling
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE TITLE
+   --------------------------------------------------------- */
+
+.main-content > h1 {
+    margin: 0 0 24px;
+
+    color: #f4f8ff;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+
+/* ---------------------------------------------------------
+   STATISTIC CARDS
+   --------------------------------------------------------- */
+
+.main-content .cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+
+/* Individual card */
+
+.main-content .cards .card {
+    position: relative;
+
+    min-height: 125px;
+
+    box-sizing: border-box;
+
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 34, 66, 0.96),
+            rgba(8, 23, 48, 0.96)
+        );
+
+    border: 1px solid rgba(112, 215, 255, 0.09);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Small accent line */
+
+.main-content .cards .card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #269bd8,
+            #70d7ff
+        );
+
+    opacity: 0.75;
+}
+
+
+/* Hover */
+
+.main-content .cards .card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(112, 215, 255, 0.18);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.23),
+        0 0 25px rgba(38, 155, 216, 0.04);
+}
+
+
+/* Card title */
+
+.main-content .cards .card h3 {
+    margin: 0 0 12px;
+
+    color: rgba(210, 224, 242, 0.68);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* Card number */
+
+.main-content .cards .card span {
+    display: block;
+
+    color: #f4f8ff;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   CHART CARDS
+   --------------------------------------------------------- */
+
+.main-content .chart-card {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 24px;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 29, 57, 0.96),
+            rgba(7, 20, 42, 0.96)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Chart title */
+
+.main-content .chart-card h2 {
+    margin: 0 0 22px;
+
+    display: flex;
+    align-items: center;
+
+    color: #f4f8ff;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* Title accent */
+
+.main-content .chart-card h2::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 4px;
+    height: 20px;
+
+    margin-right: 11px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #70d7ff,
+            #269bd8
+        );
+}
+
+
+/* ---------------------------------------------------------
+   CHART CONTAINER
+   --------------------------------------------------------- */
+
+.main-content .chart-container {
+    position: relative;
+
+    width: 100%;
+
+    height: 330px;
+
+    box-sizing: border-box;
+
+    padding: 8px 4px 4px;
+}
+
+
+/*
+   Important for Chart.js:
+   The canvas should stay inside the card
+   instead of forcing the page wider.
+*/
+
+.main-content .chart-container canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   LAST CHART CARD
+   --------------------------------------------------------- */
+
+.main-content .chart-card:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — LARGE TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    .main-content .cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .main-content > h1 {
+        font-size: 26px;
+    }
+
+    .main-content .chart-container {
+        height: 300px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE — MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    .main-content > h1 {
+        font-size: 24px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .main-content .cards {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .main-content .cards .card {
+        min-height: 105px;
+
+        padding: 19px;
+    }
+
+
+    .main-content .cards .card span {
+        font-size: 28px;
+    }
+
+
+    .main-content .chart-card {
+        padding: 18px;
+
+        border-radius: 15px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .main-content .chart-card h2 {
+        font-size: 16px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .main-content .chart-container {
+        height: 250px;
+
+        padding: 4px 0;
+    }
+
+}

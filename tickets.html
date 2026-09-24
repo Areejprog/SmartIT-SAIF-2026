@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>IT Service Tickets</title>
+
+
+    <!-- Main Style -->
+    <link
+        rel="stylesheet"
+        href="CSS/style.css"
+    >
+
+    <!-- Tickets Style -->
+    <link
+        rel="stylesheet"
+        href="CSS/tickets.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div>
+
+        <img
+            src="Images/Logo.png"
+            class="logo"
+            alt="Smart IT Logo"
+        >
+
+        <h2 class="logo-text">
+            Smart IT
+        </h2>
+
+
+        <nav>
+
+            <a href="home.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="assets.html">
+
+                <i class="fa-solid fa-computer"></i>
+
+                Assets
+
+            </a>
+
+
+            <a
+                href="tickets.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-ticket"></i>
+
+                Tickets
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="logout-btn"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </a>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================== -->
+
+    <div class="page-header">
+
+        <div class="page-header-icon">
+
+            <i class="fa-solid fa-ticket"></i>
+
+        </div>
+
+
+        <div>
+
+            <h1>
+                IT Service Tickets
+            </h1>
+
+            <p>
+                Manage and track IT support requests
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         CREATE NEW TICKET
+    ================================================== -->
+
+    <section class="ticket-create-card">
+
+
+        <div class="section-title">
+
+            <div class="section-title-icon">
+
+                <i class="fa-solid fa-plus"></i>
+
+            </div>
+
+            <h2>
+                Create New Service Ticket
+            </h2>
+
+        </div>
+
+
+
+        <!-- ===============================
+             FIRST ROW
+        ================================ -->
+
+        <div class="ticket-form-grid">
+
+
+            <!-- Ticket ID -->
+
+            <div class="form-group">
+
+                <label for="ticketId">
+                    Ticket ID
+                </label>
+
+                <input
+                    id="ticketId"
+                    class="form-control"
+                    type="text"
+                    placeholder="e.g. TCK-0001"
+                >
+
+            </div>
+
+
+
+            <!-- Device -->
+
+            <div class="form-group">
+
+                <label for="ticketAsset">
+                    Select Device
+                </label>
+
+                <select
+                    id="ticketAsset"
+                    class="form-control"
+                >
+
+                    <option value="">
+                        Choose a device
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Service -->
+
+            <div class="form-group">
+
+                <label for="ticketService">
+                    Service Type
+                </label>
+
+                <select
+                    id="ticketService"
+                    class="form-control"
+                >
+
+                    <option value="">
+                        Select service type
+                    </option>
+
+                    <option value="Password Reset">
+                        Password Reset
+                    </option>
+
+                    <option value="Security Software Update">
+                        Security Software Update
+                    </option>
+
+                    <option value="Software Installation">
+                        Software Installation
+                    </option>
+
+                    <option value="System Formatting">
+                        System Formatting
+                    </option>
+
+                    <option value="Operating System Update">
+                        Operating System Update
+                    </option>
+
+                    <option value="Hardware Issue">
+                        Hardware Issue
+                    </option>
+
+                    <option value="Network Issue">
+                        Network Issue
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Priority -->
+
+            <div class="form-group">
+
+                <label for="ticketPriority">
+                    Priority
+                </label>
+
+                <select
+                    id="ticketPriority"
+                    class="form-control"
+                >
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                    <option
+                        value="Medium"
+                        selected
+                    >
+                        Medium
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                    <option value="Critical">
+                        Critical
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label for="ticketStatus">
+                    Status
+                </label>
+
+                <select
+                    id="ticketStatus"
+                    class="form-control"
+                >
+
+                    <option value="Open">
+                        Open
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Closed">
+                        Closed
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===============================
+             SECOND ROW
+        ================================ -->
+
+        <div class="ticket-form-row-2">
+
+
+            <!-- Date -->
+
+            <div class="form-group">
+
+                <label for="ticketDate">
+                    Date
+                </label>
+
+                <input
+                    id="ticketDate"
+                    class="form-control"
+                    type="date"
+                >
+
+            </div>
+
+
+
+            <!-- Description -->
+
+            <div class="form-group">
+
+                <label for="ticketDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="ticketDescription"
+                    class="form-control"
+                    placeholder="Describe the issue or required service..."
+                    rows="3"
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- Create Button -->
+
+            <button
+                type="button"
+                class="create-ticket-btn"
+                onclick="addTicket()"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Create Ticket
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SELECTED DEVICE INFORMATION
+    ================================================== -->
+
+    <section
+        id="selectedDeviceInfo"
+        class="device-info-card"
+    >
+
+
+        <!-- Title -->
+
+        <div class="device-info-title">
+
+            <div class="device-info-icon">
+
+                <i class="fa-solid fa-desktop"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Selected Device Information
+                </h3>
+
+                <span>
+                    Choose a device to view its details
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Device -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-desktop"></i>
+
+                Device
+
+            </div>
+
+            <span
+                id="infoDeviceName"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- Type -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-tag"></i>
+
+                Type
+
+            </div>
+
+            <span
+                id="infoDeviceType"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- Employee -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-user"></i>
+
+                Employee
+
+            </div>
+
+            <span
+                id="infoEmployee"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- Department -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-building"></i>
+
+                Department
+
+            </div>
+
+            <span
+                id="infoDepartment"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- Serial Number -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-barcode"></i>
+
+                Serial Number
+
+            </div>
+
+            <span
+                id="infoSerial"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+
+        <!-- Device Age -->
+
+        <div class="device-detail">
+
+            <div class="device-detail-label">
+
+                <i class="fa-solid fa-clock"></i>
+
+                Device Age
+
+            </div>
+
+            <span
+                id="infoAge"
+                class="device-detail-value"
+            >
+                -
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SERVICE TICKETS
+    ================================================== -->
+
+    <section class="tickets-table-card">
+
+
+        <!-- ===============================
+             TABLE HEADER
+        ================================ -->
+
+        <div class="tickets-table-header">
+
+
+            <div class="tickets-table-title">
+
+                <i class="fa-solid fa-ticket"></i>
+
+                <h2>
+                    Service Tickets
+                </h2>
+
+            </div>
+
+
+
+            <!-- Search -->
+
+            <div class="ticket-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    id="searchTicket"
+                    type="text"
+                    placeholder="Search tickets..."
+                    onkeyup="searchTickets()"
+                >
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================
+             TABLE
+        ================================ -->
+
+        <div class="table-wrapper">
+
+            <table class="ticket-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Ticket ID
+                        </th>
+
+                        <th>
+                            Device
+                        </th>
+
+                        <th>
+                            Type
+                        </th>
+
+                        <th>
+                            Employee
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                        <th>
+                            Service
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Priority
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="ticketsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- ===============================
+             FOOTER
+        ================================ -->
+
+        <div class="table-footer">
+
+            <span id="ticketCount">
+                Service tickets
+            </span>
+
+
+            <div class="pagination">
+
+                <button type="button">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="active"
+                >
+                    1
+                </button>
+
+                <button type="button">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+<!-- =====================================================
+     EDIT TICKET MODAL
+===================================================== -->
+
+<div
+    id="editTicketModal"
+    class="edit-ticket-modal"
+>
+
+    <div class="edit-ticket-overlay"
+         onclick="closeEditTicket()">
+    </div>
+
+    <div class="edit-ticket-dialog">
+
+        <div class="edit-ticket-header">
+
+            <div>
+                <h2>Edit Service Ticket</h2>
+
+                <p>
+                    Update ticket information
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="edit-ticket-close"
+                onclick="closeEditTicket()"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form
+            onsubmit="
+                event.preventDefault();
+                saveEditedTicket();
+            "
+        >
+
+            <input
+                type="hidden"
+                id="editTicketId"
+            >
+
+
+            <div class="edit-ticket-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Ticket ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editTicketNumber"
+                        class="form-control"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Device
+                    </label>
+
+                    <select
+                        id="editTicketAsset"
+                        class="form-control"
+                        required
+                    >
+
+                        <option value="">
+                            Select Device
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Service
+                    </label>
+
+                    <select
+                        id="editTicketService"
+                        class="form-control"
+                        required
+                    >
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option value="Security Software Update">
+                            Security Software Update
+                        </option>
+
+                        <option value="Hardware Repair">
+                            Hardware Repair
+                        </option>
+
+                        <option value="Software Installation">
+                            Software Installation
+                        </option>
+
+                        <option value="Network Issue">
+                            Network Issue
+                        </option>
+
+                        <option value="Printer Issue">
+                            Printer Issue
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select
+                        id="editTicketPriority"
+                        class="form-control"
+                    >
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                        <option value="Critical">
+                            Critical
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select
+                        id="editTicketStatus"
+                        class="form-control"
+                    >
+
+                        <option value="Open">
+                            Open
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                        <option value="Closed">
+                            Closed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Ticket Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="editTicketDate"
+                        class="form-control"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group edit-ticket-description">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="editTicketDescription"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Describe the service ticket..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="edit-ticket-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="closeEditTicket()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="create-ticket-btn"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    © 2026 Smart IT Asset & Ticket Management System |
+    Developed by Areej |
+    All Rights Reserved.
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="JS/tickets.js"></script>
+
+
+</body>
+
+</html>
